@@ -87,6 +87,84 @@ app.get('/api/desserts', function (req, res) {
   });
 });
 
+//Delete dessert
+app.delete('/api/desserts/:id',  (req, res) => {
+  Desserts.findByIdAndDelete(req.params.id, (err, data) =>{
+    if(err){
+      console.log(err);
+    }else{
+      res.status(200).send({
+        succes:"true",
+        message: 'DELETE: dessert',
+        dessert: data
+      })
+    }
+  });
+});
+
+
+//Post desserts
+app.post('/api/desserts', function (req, res) {
+  const {name, price} = req.body;
+  const Dessert = new Desserts({
+    name: name,
+    price: price
+  });
+  Dessert.save( (err, data) => {
+      if(err){
+        console.log('ERROR someting is wrong!')
+      }else{
+        res.status(201).send({
+          succes: 'true',
+          message: 'GET: Desserts',
+          Desserts:data
+        });
+      }
+  });
+});
+
+
+//Put modify dessert
+app.put('/api/desserts/:id',  (req, res) => {
+Desserts.findById( (req.params.id),(err, data) => {
+    if(err){
+      console.log('ERROR someting is wrongg!');
+      console.log(err);
+    }else{
+      const {name, price} = req.body;
+      
+      data.name = name ? name : data.name;
+      data.price = price ? price : data.price;
+      data.save( (err) => {
+        if(err){
+          console.log('ERROR someting is wrongg!')
+        }else{
+          res.status(201).send({
+            succes: 'true',
+            message: 'PUT: Desserts',
+            newDessert: data
+          });
+        }
+      });
+    }
+});
+});
+
+
+//Get one
+app.get('/api/desserts/:id', function (req, res) {
+  Desserts.findById( (req.params.id),(err, data) => {
+      if(err){
+        console.log('ERROR someting is wrong!')
+      }else{
+        res.status(200).send({
+          succes: 'true',
+          message: 'GET: desserts',
+          desserts: data
+        });
+      }
+  });
+});
 
 
 

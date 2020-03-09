@@ -90,10 +90,14 @@ db.admin.insert({"name" : "admin","password" : "huecas"})
 **Para cambiar de nombre una coleción.**
 db.starters.renameCollection("maincourses") 
 
-**Para borrar una coleción.**
+**Para borrar un documento.**
 db.admin.deleteOne({_id:ObjectId("5e6665e5fa6c93b1d388cb84")}) 
 
-       ObjectId("5e6665e5fa6c93b1d388cb84"),     
+**Para actualizar un documento de una colección.**
+db.drinks.updateOne({ name: "Coca cola" },{$set: { "price": "2.75€"},$currentDate: { lastModified: true }})    
+
+**Para borrar una colección.**
+db.admin.drop()
              
      
 
