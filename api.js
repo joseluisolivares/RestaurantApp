@@ -4,6 +4,7 @@ const Starters = require('./models/starters');
 const MainCourses = require('./models/mainCourses');
 const Desserts = require('./models/desserts');
 const Drinks = require('./models/drinks');
+const Admin = require('./models/admin');
 const {dbConnect} = require ('./config/dbConfig');
 dbConnect();
 
@@ -14,6 +15,7 @@ const callToDataBase = (req) => {
   req.params.key === 'maincourses' ? item=MainCourses : console.log(req.originalUrl);
   req.params.key === 'drinks' ? item=Drinks : console.log(req.originalUrl);
   req.params.key === 'starters' ? item=Starters : console.log(req.originalUrl);
+  req.params.key === 'admin' ? item=Admin : console.log(req.originalUrl);
   return item;
 }
 
@@ -68,10 +70,11 @@ app.delete('/api/:key/:id',  (req, res) => {
 //Post
 app.post('/api/:key', function (req, res) {
   callToDataBase(req);
-  const {name, price} = req.body;
+  const {name, price,password} = req.body;
   item = new item({
     name: name,
-    price: price
+    price: price,
+    password: password
   });
   item.save( (err, data) => {
       if(err){
@@ -94,9 +97,10 @@ app.put('/api/:key/:id',  (req, res) => {
       console.log('ERROR someting is wrongg!');
       console.log(err);
     }else{
-      const {name, price} = req.body;
+      const {name, price, password} = req.body;
       data.name = name ? name : data.name;
       data.price = price ? price : data.price;
+      data.password = password ? password : data.password;
       data.save( (err) => {
         if(err){
           console.log('ERROR someting is wrongg!')
