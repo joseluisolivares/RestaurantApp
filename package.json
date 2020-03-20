@@ -1,0 +1,23 @@
+{
+  "name": "restaurantapp",
+  "version": "1.0.0",
+  "description": "Proyecto final de master",
+  "main": "api.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joseluisolivares/RestaurantApp.git"
+  },
+  "author": "Jose Luis Olivares",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joseluisolivares/RestaurantApp/issues"
+  },
+  "homepage": "https://github.com/joseluisolivares/RestaurantApp#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.8.11"
+  }
+}
