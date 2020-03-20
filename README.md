@@ -23,21 +23,21 @@
 
     5.6 => Para crear la colección de mainCourses escribe en consola: 
 
-        db.starters.insert({"name" : "Ostras al natural o con salsa ponzu","price" : "19.90€"})
-        db.starters.insert({"name" : "Salpicón de bogavante","price" : "23.90€"})
-        db.starters.insert({"name" : "Almejas gallegas a la sartén","price" : "21.00€"})
-        db.starters.insert({"name" : "Berberechos de la ría de Noia al vapor","price" : "17.90€"})
-        db.starters.insert({"name" : "Navajas de la Ría a la sartén","price" : "32.90€"})
-        db.starters.insert({"name" : "Steak Tartare","price" : "24.90€"})
-        db.starters.insert({"name" : "Tartar de atún picante","price" : "26.90€"})
-        db.starters.insert({"name" : "Tiradito de pez limón a la miel, salsa de ostras y pisco","price" : "28.90€"})
-        db.starters.insert({"name" : "Ceviche de corvina salvaje","price" : "18.70€"})
-        db.starters.insert({"name" : "Ceviche de langosta","price" : "33.90€"})
-        db.starters.insert({"name" : "Carpaccio de lomo de vaca madurada","price" : "23.90€"})
-        db.starters.insert({"name" : "Aguachile de zamburiñas","price" : "31.90€"})
-        db.starters.insert({"name" : "Tataki de atún de almadraba con ensalada de aguacate","price" : "27.90€"})
-        db.starters.insert({"name" : "Arroz 'Chaufa' con pato Pekín y langostinos","price" : "21.50€"})
-        db.starters.insert({"name" : "Pluma ibérica con puré de boniato","price" : "26.30€"})
+        db.maincourses.insert({"name" : "Ostras al natural o con salsa ponzu","price" : "19.90€"})
+        db.maincourses.insert({"name" : "Salpicón de bogavante","price" : "23.90€"})
+        db.maincourses.insert({"name" : "Almejas gallegas a la sartén","price" : "21.00€"})
+        db.maincourses.insert({"name" : "Berberechos de la ría de Noia al vapor","price" : "17.90€"})
+        db.maincourses.insert({"name" : "Navajas de la Ría a la sartén","price" : "32.90€"})
+        db.maincourses.insert({"name" : "Steak Tartare","price" : "24.90€"})
+        db.maincourses.insert({"name" : "Tartar de atún picante","price" : "26.90€"})
+        db.maincourses.insert({"name" : "Tiradito de pez limón a la miel, salsa de ostras y pisco","price" : "28.90€"})
+        db.maincourses.insert({"name" : "Ceviche de corvina salvaje","price" : "18.70€"})
+        db.maincourses.insert({"name" : "Ceviche de langosta","price" : "33.90€"})
+        db.maincourses.insert({"name" : "Carpaccio de lomo de vaca madurada","price" : "23.90€"})
+        db.maincourses.insert({"name" : "Aguachile de zamburiñas","price" : "31.90€"})
+        db.maincourses.insert({"name" : "Tataki de atún de almadraba con ensalada de aguacate","price" : "27.90€"})
+        db.maincourses.insert({"name" : "Arroz 'Chaufa' con pato Pekín y langostinos","price" : "21.50€"})
+        db.maincourses.insert({"name" : "Pluma ibérica con puré de boniato","price" : "26.30€"})
 
     5.7 => Para crear la colección de dessserts escribe en consola: 
 
@@ -54,6 +54,9 @@
         db.drinks.insert({"name" : "Fanta de naranja","price" : "2.5€"})
         db.drinks.insert({"name" : "Mosto","price" : "2€"})
         db.drinks.insert({"name" : "Agua","price" : "1.8€"})
+
+        db.manage.insert({"name" : "admin","password" : "huecas"})
+
 
     
 6- Ahora vamos a crearnos el entorno para conectar la api con la BBDD.
